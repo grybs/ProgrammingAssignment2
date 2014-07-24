@@ -2,7 +2,9 @@
 ## The inverse is then cached
 ## When the inverse is called later on it is retrieved from the cache, if present
 
-## Creates a matrix and its inverse
+## Creates a matrix, then retrieves it
+## then its inverse is created and retreived
+## the inverse is stored in cache
 
 makeCacheMatrix <- function(x = matrix()) {
         s <- NULL
@@ -20,6 +22,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Returns a matrix that is the inverse of 'x'
+## it retrieves the cached value if it exists
+## it does this by referring to the get inverse function 
+## the getinverse function is found in the previous function
+## if no cached value exists then it performs the inverse calculation
 
 cacheSolve <- function(x, ...) {
                 s <- x$getinverse()
